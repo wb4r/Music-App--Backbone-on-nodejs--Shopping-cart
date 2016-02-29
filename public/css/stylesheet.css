@@ -37,8 +37,32 @@ background-color: #f5f5f5;
   padding-bottom: 3px!important;
 }
 
-h4, h5, button, p {
+h4, h5, button, p, h4 strong {
   font-family: Helvetica!important;
+}
+
+.intro-text {
+  border-right: 1px solid #d8d8d8;
+}
+
+.itunes-logo {
+  height: 65px;
+  width: 65px;
+}
+
+.h4-special {
+  font-size: 21px;
+  color: #a7a7a7;
+  letter-spacing: -1px;
+  margin-top: -12px!important;
+}
+
+.intro-text * {
+  line-height: 160%;
+}
+
+.intro-text p {
+  color: #767676;
 }
 
 .btn-albums {
@@ -74,6 +98,33 @@ ul {
 
 .well {
   background-color: white!important;
+}
+
+.well-intro {
+  background-color: #e8e8e8!important;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.75);
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+100;White+3D */
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #ffffff 0%,#e5e5e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+
+  margin-left: 0px!important;
+  margin-bottom: 35px;
+}
+
+.musicfa {
+  color: white;
+}
+
+.main-title {
+  font-size: 29px;
+  margin-bottom: 10px;
 }
 
 
