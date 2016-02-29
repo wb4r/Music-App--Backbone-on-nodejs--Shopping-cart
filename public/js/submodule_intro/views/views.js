@@ -6,7 +6,7 @@ App.module("Intro.Views", function(Views, App, Backbone, Marionette, $, _) {
 
   Views.Album = Marionette.ItemView.extend({
     template: "#intro-album",
-    className: "col-xs-4",
+    className: "col-xs-3",
 
     events: {
       "click .btn-show-tracks"  :   "goToTracks"
