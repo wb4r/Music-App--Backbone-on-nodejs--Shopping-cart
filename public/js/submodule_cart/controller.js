@@ -4,13 +4,13 @@
 
 App.module("Cart", function(Cart, App, Backbone, Marionette, $, _) {
   var cartProducts,
-      cartProductsView;
+      cartProductsView,
+      cartTotal;
 
   Cart.Controller = {
     startCart: function() {
       // Load Products
       cartProducts = new App.Cart.Entities.Products();
-      // cartProducts.fetch();
 
       // Products View
       cartProductsView = new App.Cart.Views.Products({
@@ -18,9 +18,13 @@ App.module("Cart", function(Cart, App, Backbone, Marionette, $, _) {
       })
     },
     addToList: function(model) {
-      cartProducts.add(model)
+      new_product = new App.Cart.Entities.Product();
 
-      // App.regions.cart.show(cartProductsView)
-    }
+      new_product.set({"title": model.attributes.title})
+      new_product.set({"price": model.attributes.price})
+
+      cartProducts.add(new_product)
+      App.regions.cart.show(cartProductsView)
+    },
   }
 })

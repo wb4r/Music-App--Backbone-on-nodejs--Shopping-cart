@@ -63,6 +63,7 @@
       </div>
 
       <div id="cart-region"></div>
+      <div id="total-region"></div>
 
       <div id="main-region" class="container">
         <p>Here is static content in the web page. You'll notice that it gets
@@ -127,13 +128,19 @@
 
     <script type="text/template" id="cart-item">
       <li>
-        <span><%- title %></span> span><%- price %></span>
+        <span><%- title %></span> <span style="float: right;"><%- price %></span>
       </li>
     </script>
 
     <script type="text/template" id="cart-items">
-      <div class="col-xs-5">
+      <div class="col-xs-2">
         <ol></ol>
+        <br>
+      </div>
+    </script>
+
+    <script type="text/template" id="cart-total">
+      <div class="col-xs-2">
       </div>
     </script>
 

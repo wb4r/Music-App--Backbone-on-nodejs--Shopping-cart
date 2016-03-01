@@ -10,7 +10,8 @@ App.on("before:start", function() {
     el: "#app-container",
     regions: {
       main: "#main-region",
-      cart: "#cart-region"
+      cart: "#cart-region",
+      total: "#total-region"
     }
   })
 

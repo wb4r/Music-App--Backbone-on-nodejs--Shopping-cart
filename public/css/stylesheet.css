@@ -37,7 +37,7 @@ background-color: #f5f5f5;
   padding-bottom: 3px!important;
 }
 
-h4, h5, button, p, h4 strong {
+h4, h5, button, p, h4 strong, li {
   font-family: Helvetica!important;
 }
 
@@ -162,4 +162,8 @@ ul {
     background: -ms-linear-gradient(top,  #267c99 50%,#007299 50%); /* IE10+ */
     background: linear-gradient(to bottom,  #267c99 50%,#007299 50%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#267c99', endColorstr='#007299',GradientType=0 ); /* IE6-9 */
+}
+
+ol {
+  list-style-type: none!important;
 }

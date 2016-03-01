@@ -6,12 +6,17 @@ App.module("Cart.Views", function(Views, App, Backbone, Marionette, $, _) {
 
   Views.Product = Marionette.ItemView.extend({
     template: "#cart-item",
-    className: "col-xs-5",
+    className: "",
   });
 
   Views.Products = Marionette.CompositeView.extend({
     template: "#cart-items",
     childView: Views.Product,
-    childViewContainer: ".col-xs-5"
-  })
+    childViewContainer: ".col-xs-2 > ol"
+  });
+
+  // Views.Total = Marionette.ItemView.extend({
+  //   template: "#cart-total",
+  //   className: ""
+  // })
 })

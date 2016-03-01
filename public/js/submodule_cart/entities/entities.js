@@ -19,5 +19,14 @@ App.module("Cart.Entities", function(Entities, App, Backbone, Marionette, $, _) 
   Entities.Products = Backbone.Collection.extend({
     model: Entities.Product,
     url: "",
-  })
+    defaults: {
+      total: 0
+    }
+  });
+
+  // Entities.Total = Backbone.Model.extend({
+  //   defaults: {
+  //     ammount: 0
+  //   }
+  // })
 })
