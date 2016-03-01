@@ -8,7 +8,7 @@ App.module("Dialog", function(Dialog, App, Backbone, Marionette, $, _) {
     showTracks: function(model) {
 
       // build url per parts
-      var stdURL = "http://0.0.0.0:3000/albums/",
+      var stdURL = "../../../albums/",
           albumTitleUrl,
           appendUrl = ".json";
 

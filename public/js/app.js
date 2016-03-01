@@ -9,7 +9,8 @@ App.on("before:start", function() {
   var Layout = Marionette.LayoutView.extend({
     el: "#app-container",
     regions: {
-      main: "#main-region"
+      main: "#main-region",
+      cart: "#cart-region"
     }
   })
 
@@ -18,4 +19,5 @@ App.on("before:start", function() {
 
 App.on("start", function() {
   App.Intro.Controller.showIntroAlbums();
+  App.Cart.Controller.startCart();
 })

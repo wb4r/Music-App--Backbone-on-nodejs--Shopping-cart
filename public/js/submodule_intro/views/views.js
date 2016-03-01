@@ -9,12 +9,15 @@ App.module("Intro.Views", function(Views, App, Backbone, Marionette, $, _) {
     className: "col-xs-3",
 
     events: {
-      "click .btn-show-tracks"  :   "goToTracks"
+      "click .btn-show-tracks"  :   "goToTracks",
+      "click .cart-btn"         :   "callingCart"
     },
     goToTracks: function(e) {
-      // e.preventDefault();
-      // e.stopPropagation();
       this.trigger("album:show", this.model);
+    },
+    callingCart: function(e) {
+      e.preventDefault();
+      this.trigger("album:buy", this.model)
     }
   });
 

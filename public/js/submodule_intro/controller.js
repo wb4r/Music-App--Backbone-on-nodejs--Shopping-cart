@@ -19,6 +19,10 @@ App.module("Intro", function(Intro, App, Backbone, Marionette, $, _) {
         App.Dialog.Controller.showTracks(model)
       })
 
+      introAlbumsView.on("childview:album:buy", function(childView, model) {
+        App.Cart.Controller.addToList(model)
+      })
+
       App.regions.main.show(introAlbumsView)
     }
   }

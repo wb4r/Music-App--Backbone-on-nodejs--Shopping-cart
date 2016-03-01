@@ -19,7 +19,7 @@ App.module("Dialog.Views", function(Views, App, Backbone, Marionette, $, _) {
     childViewContainer: ".well ol",
 
     events: {
-      "click .closeDialog"  :   "closeDialog"
+      "click .closeDialog"  :   "closeDialog",
     },
 
     open: function() {

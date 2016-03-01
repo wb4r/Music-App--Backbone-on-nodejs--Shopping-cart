@@ -62,19 +62,15 @@
         </div>
       </div>
 
+      <div id="cart-region"></div>
+
       <div id="main-region" class="container">
         <p>Here is static content in the web page. You'll notice that it gets
         replaced by our app as soon as we start it.</p>
       </div>
       <div id="dialog-region"> </div>
       <div id="overlay">
-        <!-- <div id="dialogHeader">
-
-        </div> -->
-        <div id="dialogTracks">
-
-        </div>
-        <!-- <div class="well"></div> -->
+        <div id="dialogTracks"></div>
       </div>
     </div>
 
@@ -92,9 +88,7 @@
 
     <script type="text/template" id="intro-albums">
       <div class="container">
-
-        <div class="row well">
-        </div>
+        <div class="row well"></div>
       </div>
     </script>
 
@@ -110,6 +104,7 @@
       </div>
     </script>
 
+
     <script type="text/template" id="dialog-track">
       <div class="singleTrack">
         <li>
@@ -118,16 +113,28 @@
       </div>
     </script>
 
+
     <script type="text/template" id="dialog-tracks">
       <div class="well col-xs-6 col-xs-offset-3 insideOverlay">
         <a href="#" class="closeDialog">
           Close
         </a>
         <div class="row" id="dialogHeader" style="margin-bottom: 20px;">
-
         </div>
         <ol></ol>
-     </div>
+      </div>
+    </script>
+
+    <script type="text/template" id="cart-item">
+      <li>
+        <span><%- title %></span> span><%- price %></span>
+      </li>
+    </script>
+
+    <script type="text/template" id="cart-items">
+      <div class="col-xs-5">
+        <ol></ol>
+      </div>
     </script>
 
 
@@ -143,7 +150,8 @@
 
     <!-- app -->
     <script src="js/app.js"></script>
-    <!-- Sub-module Intro -->
+
+    <!--####### Sub-module INTRO #######-->
     <!-- Intro.Controller -->
     <script src="js/submodule_intro/controller.js"></script>
     <!-- Intro.Entities -->
@@ -152,7 +160,8 @@
     <script src="js/submodule_intro/views/views.js"></script>
 
 
-    <!-- Sub-module Dialog -->
+    <!--####### Sub-module DIALOG #######-->
+    <!-- Dialog App -->
     <script src="js/submodule_dialog/app.js"></script>
     <!-- Dialog.Controller -->
     <script src="js/submodule_dialog/controller/controller.js"></script>
@@ -161,6 +170,13 @@
     <!-- Dialog.Views -->
     <script src="js/submodule_dialog/views/views.js"></script>
 
+    <!--####### Sub-module CART #######-->
+    <!-- Cart.Controller -->
+    <script src="js/submodule_cart/controller.js"></script>
+    <!-- Cart.Entities -->
+    <script src="js/submodule_cart/entities/entities.js"></script>
+    <!-- Cart.Views -->
+    <script src="js/submodule_cart/views/views.js"></script>
 
     <script type="text/javascript">
       App.start()
