@@ -12,7 +12,8 @@ App.module("Cart.Entities", function(Entities, App, Backbone, Marionette, $, _) 
     },
     defaults: {
       title: "",
-      price: ""
+      price: "",
+      cover: ""
     }
   });
 

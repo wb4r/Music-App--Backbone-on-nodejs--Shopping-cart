@@ -22,6 +22,7 @@ App.module("Cart", function(Cart, App, Backbone, Marionette, $, _) {
 
       new_product.set({"title": model.attributes.title})
       new_product.set({"price": model.attributes.price})
+      new_product.set({"cover": model.attributes.cover})
 
       cartProducts.add(new_product)
       App.regions.cart.show(cartProductsView)

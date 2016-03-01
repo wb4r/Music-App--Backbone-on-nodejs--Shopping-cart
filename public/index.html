@@ -61,9 +61,11 @@
           </div>
         </div>
       </div>
-
-      <div id="cart-region"></div>
-      <div id="total-region"></div>
+      <div class="col-xs-2">
+      <h3>Shopping Cart<span class="fa fa-shopping-cart" style="float: right;"></span></h3>
+      <div class="row" id="cart-region"></div>
+      <div class="row" id="total-region"></div>
+      </div>
 
       <div id="main-region" class="container">
         <p>Here is static content in the web page. You'll notice that it gets
@@ -125,23 +127,29 @@
         <ol></ol>
       </div>
     </script>
-
     <script type="text/template" id="cart-item">
       <li>
-        <span><%- title %></span> <span style="float: right;"><%- price %></span>
-      </li>
-    </script>
 
+        <img class="shoppinglist-cover" src="<%-cover%>" alt="" />
+        <span class="shoppinglist-title"><%- title %></span>
+        <div style="float: right;">
+
+        <span class="shoppinglist-price"><%- price %></span>
+        <button class="btn btn-sm btn-deleteitem"><span class="fa fa-times"></span></button>
+        </div>
+      </li>
+        <br>
+    </script>
     <script type="text/template" id="cart-items">
-      <div class="col-xs-2">
-        <ol></ol>
+      <div class="">
+        <ol class="ol-cart"></ol>
         <br>
       </div>
     </script>
 
     <script type="text/template" id="cart-total">
-      <div class="col-xs-2">
-        Total: <%- ammount %>
+      <div class="col-xs-12 shoppinglist-total">
+        <h4 style="float: left;"><strong>Total:</strong></h4> <h4 style="float: right;"><%- ammount.toFixed(2) %></h4>
       </div>
     </script>
 
