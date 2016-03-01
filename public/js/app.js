@@ -21,4 +21,5 @@ App.on("before:start", function() {
 App.on("start", function() {
   App.Intro.Controller.showIntroAlbums();
   App.Cart.Controller.startCart();
+  App.Cart.Total.Controller.init()
 })

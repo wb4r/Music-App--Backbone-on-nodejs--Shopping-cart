@@ -14,9 +14,4 @@ App.module("Cart.Views", function(Views, App, Backbone, Marionette, $, _) {
     childView: Views.Product,
     childViewContainer: ".col-xs-2 > ol"
   });
-
-  // Views.Total = Marionette.ItemView.extend({
-  //   template: "#cart-total",
-  //   className: ""
-  // })
 })

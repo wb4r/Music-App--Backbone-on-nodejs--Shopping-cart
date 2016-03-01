@@ -21,6 +21,7 @@ App.module("Intro", function(Intro, App, Backbone, Marionette, $, _) {
 
       introAlbumsView.on("childview:album:buy", function(childView, model) {
         App.Cart.Controller.addToList(model)
+        App.Cart.Total.Controller.calculate(model)
       })
 
       App.regions.main.show(introAlbumsView)
