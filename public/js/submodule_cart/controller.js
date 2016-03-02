@@ -30,6 +30,7 @@ App.module("Cart", function(Cart, App, Backbone, Marionette, $, _) {
       new_product.set({"cover": model.attributes.cover})
 
       cartProducts.add(new_product)
+      App.Cart.Total.Controller.calculate(new_product)
       App.regions.cart.show(cartProductsView)
     }
 

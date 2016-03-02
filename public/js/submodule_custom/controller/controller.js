@@ -6,7 +6,9 @@ App.module("Custom", function(Custom, App, Backbone, Marionette, $, _) {
 
   Custom.Controller = {
     init: function() {
-      var customBuyBtn = new App.Custom.Views.BuyBtn();
+      var self = this;
+
+      customBuyBtn = new App.Custom.Views.BuyBtn();
       customAlbum = new App.Custom.Entities.Album();
       customAlbumView = new App.Custom.Views.Album({
         collection: customAlbum
@@ -16,8 +18,28 @@ App.module("Custom", function(Custom, App, Backbone, Marionette, $, _) {
         customAlbum.remove(model)
       })
 
-      customBuyBtn.on("buy", function(childView, collection) {
-        console.log("collection");
+      customBuyBtn.on("addCustomToCart", function(childView, collection) {
+        var totalprice,
+            albumName,
+            cover,
+            trackList;
+
+        if (customAlbum.length > 0) {
+          totalprice = self.getTotalPrice();
+          albumName = $("#custom-name").val();
+          cover = "https://image.freepik.com/free-psd/psd-vinyl-record-icon_30-1865.jpg";
+          trackList = ["alfa", "bravo", "charlie"];
+
+          var new_model_album = new App.Custom.Entities.AlbumPack({
+            title: albumName,
+            price: totalprice,
+            cover: cover,
+            tracks: trackList
+          })
+          App.Cart.Controller.addToList(new_model_album)
+          customAlbum.reset();
+          $("#custom-name").val("");
+        }
       })
 
       App.Custom.regions.list.show(customAlbumView)
@@ -41,7 +63,14 @@ App.module("Custom", function(Custom, App, Backbone, Marionette, $, _) {
 
       var price = prices[Math.floor(Math.random()*prices.length)];
       return price
-    }
+    },
+    getTotalPrice: function() {
+      var total = 0;
 
+      _.each(customAlbum.models, function(track) {
+         total += track.attributes.price
+      })
+      return total;
+    }
   }
 })

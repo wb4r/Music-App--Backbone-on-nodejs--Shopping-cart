@@ -21,4 +21,13 @@ App.module("Custom.Entities", function(Entities, App, Backbone, Marionette, $, _
     model: Entities.Track,
     url: ""
   });
+
+  Entities.AlbumPack = Backbone.Model.extend({
+    defaults: {
+      title: "",
+      price: "",
+      cover: "",
+      tracks: []
+    }
+  })
 })

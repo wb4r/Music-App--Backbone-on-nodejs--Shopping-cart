@@ -7,18 +7,8 @@ App.module("Custom.Views", function(Views, App, Backbone, Marionette, $, _) {
   Views.BuyBtn = Marionette.ItemView.extend({
     template: "#custom-btn-buy",
 
-    events: {
-      "click .buy-custom"   :   "addCustomToCart"
-    },
     triggers: {
-      "click .buy-custom"   :   "buy"
-    },
-
-    addCustomToCart: function(e) {
-      // e.preventDefault();
-      // e.stopPropagation()
-      this.trigger("buybtn:buy")
-      // console.log(this);
+      "click .buy-custom"   :   "addCustomToCart"
     }
   })
 
