@@ -1,12 +1,5 @@
 [
   {
-    "artist": "Tori Kelly",
-    "title": "Unbreakable Smile",
-    "url": "https://itunes.apple.com/us/album/unbreakable-smile-bonus-track/id988591612?v0=WWW-NAUS-ITSTOP100-ALBUMS&l=en&ign-mpt=uo%3D4",
-    "date": "Jun 23, 2015",
-    "cover": "http://a5.mzstatic.com/us/r30/Music5/v4/83/10/90/83109037-0c67-bf88-a2c5-a022b21de7d7/cover170x170.jpeg",
-    "price": 12.99
-  }, {
     "artist": "Taylor Swift",
     "title": "1989",
     "url": "https://itunes.apple.com/us/album/1989/id907242701?v0=WWW-NAUS-ITSTOP100-ALBUMS&l=en&ign-mpt=uo%3D4",
@@ -72,5 +65,27 @@
     "cover": "http://a3.mzstatic.com/us/r30/Music5/v4/50/f0/9a/50f09af6-3ae6-171b-cbc3-2c0e01c2704c/cover170x170.jpeg",
     "price": 9.99,
     "date": "2014-10-27"
+  },
+  {
+    "title":"Essentials MJ",
+    "artist":"Michael Jackson",
+    "cover": "http://a3.mzstatic.com/us/r30/Music6/v4/68/b5/27/68b5273f-7044-8dbb-4ad1-82473837a136/cover170x170.jpeg",
+    "price": 11.99,
+    "date": "2005-10-27"
+  },
+  {
+    "title":"Jekyll n Hyde",
+    "artist":"Zac Brown Band",
+    "cover": "http://a2.mzstatic.com/us/r30/Music3/v4/16/b6/6f/16b66f48-242c-d8c5-5266-dc4272b599d9/cover170x170.jpeg",
+    "price": 4.99,
+    "date": "2015-4-27"
+  },
+  {
+    "artist": "Tori Kelly",
+    "title": "Unbreakable Smile",
+    "url": "https://itunes.apple.com/us/album/unbreakable-smile-bonus-track/id988591612?v0=WWW-NAUS-ITSTOP100-ALBUMS&l=en&ign-mpt=uo%3D4",
+    "date": "Jun 23, 2015",
+    "cover": "http://a5.mzstatic.com/us/r30/Music5/v4/83/10/90/83109037-0c67-bf88-a2c5-a022b21de7d7/cover170x170.jpeg",
+    "price": 12.99
   }
 ]
