@@ -5,6 +5,7 @@
 App.module("Custom", function(Custom, App, Backbone, Marionette, $, _) {
 
   Custom.Controller = {
+    btnPrice: 0,
     init: function() {
       var self = this;
 
@@ -16,6 +17,7 @@ App.module("Custom", function(Custom, App, Backbone, Marionette, $, _) {
 
       customAlbumView.on("childview:track:delete", function(childView, model) {
         customAlbum.remove(model)
+        self.removeForButton(model.attributes.price)
       })
 
       customBuyBtn.on("addCustomToCart", function(childView, collection) {
@@ -41,6 +43,8 @@ App.module("Custom", function(Custom, App, Backbone, Marionette, $, _) {
           App.Cart.Controller.addToList(new_model_album)
           customAlbum.reset();
           $("#custom-name").val("");
+          $(".totalCustomInBtn").text("0.00");
+          self.btnPrice = 0;
         }
       })
 
@@ -54,7 +58,10 @@ App.module("Custom", function(Custom, App, Backbone, Marionette, $, _) {
 
       new_track.set({"title": model.attributes.title})
       new_track.set({"artist": model.attributes.artist})
-      new_track.set({"price": this.getPrice()})
+      new_track.set({"price": 1.25})
+      // new_track.set({"price": this.getPrice()})
+
+      this.addForButton(new_track.attributes.price)
 
       customAlbum.add(new_track)
       App.Custom.regions.list.show(customAlbumView)
@@ -73,6 +80,14 @@ App.module("Custom", function(Custom, App, Backbone, Marionette, $, _) {
          total += track.attributes.price
       })
       return total;
+    },
+    addForButton: function(price) {
+      this.btnPrice += price;
+      $(".totalCustomInBtn").text(this.btnPrice.toFixed(2))
+    },
+    removeForButton: function(price) {
+      this.btnPrice -= price;
+      $(".totalCustomInBtn").text(this.btnPrice.toFixed(2))
     }
   }
 })
