@@ -11,6 +11,14 @@ App.module("Dialog.Views", function(Views, App, Backbone, Marionette, $, _) {
   Views.Track = Marionette.ItemView.extend({
     template: "#dialog-track",
     // className: "col-xs-10"
+    events: {
+      "click .addTrack"   :   "addTrack"
+    },
+
+    addTrack: function(e) {
+      e.preventDefault();
+      this.trigger("track:addToCustom", this.model)
+    }
   });
 
   Views.Tracks = Marionette.CompositeView.extend({

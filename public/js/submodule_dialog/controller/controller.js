@@ -42,9 +42,9 @@ App.module("Dialog", function(Dialog, App, Backbone, Marionette, $, _) {
       App.Dialog.regions.dialogHeader.show(albumsView)
 
 
-      tracksView.on("childview:album:close", function(childView, model) {
-        // childView.destroy()
-        console.log("destroy");
+      tracksView.on("childview:track:addToCustom", function(childView, model) {
+        model.set({"artist": childView._parent.model.attributes.artist})
+        App.Custom.Controller.addToList(model)
       })
     }
   }

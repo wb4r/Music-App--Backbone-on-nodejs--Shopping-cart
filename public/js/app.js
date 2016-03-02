@@ -11,7 +11,8 @@ App.on("before:start", function() {
     regions: {
       main: "#main-region",
       cart: "#cart-region",
-      total: "#total-region"
+      total: "#total-region",
+      custom: "#custom-region"
     }
   })
 
@@ -21,5 +22,6 @@ App.on("before:start", function() {
 App.on("start", function() {
   App.Intro.Controller.showIntroAlbums();
   App.Cart.Controller.startCart();
-  App.Cart.Total.Controller.init()
+  App.Cart.Total.Controller.init();
+  App.Custom.Controller.init();
 })

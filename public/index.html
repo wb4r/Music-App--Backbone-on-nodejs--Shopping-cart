@@ -11,7 +11,7 @@
   </head>
   <body>
 
-    <!-- Navbar -->
+    <!--####### NAVBAR #######-->
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -34,10 +34,10 @@
       </div>
     </nav>
 
+    <!--####### APP CONTAINER #######-->
     <div id="app-container" class="container-fluid">
-
-      <div class="container">
-      <h1 class="main-title"><strong>Albums</strong> Preview</h1>
+      <div class="container intro-label">
+        <h1 class="main-title"><strong>Albums</strong> Preview</h1>
         <div class="well row well-intro">
           <div class="col-xs-3">
             <img src="https://s.mzstatic.com/htmlResources/6597/web-storefront/images/callout_screenshot.png" alt="" />
@@ -60,22 +60,45 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-xs-2">
-      <h3>Shopping Cart<span class="fa fa-shopping-cart" style="float: right;"></span></h3>
-      <div class="row" id="cart-region"></div>
-      <div class="row" id="total-region"></div>
+      </div>  <!-- end of intro-label -->
+
+      <!-- ###################################### -->
+      <!--####### BEGINING OF APPLICATION #######-->
+      <!-- ###################################### -->
+
+      <div class="container-fluid">
+        <!-- Custom Album Region -->
+        <div class="col-xs-2">
+          <h3>Create Album<span class="fa fa-th-list" style="float: right;"></span></h3>
+          <input id="custom-name" class="input form-control" name="name" type="text" value="" size="30" placeholder="Album's Name"/>
+          <br>
+          <div class="row" id="custom-region"></div>
+        </div>
+        <!-- Main Album Region -->
+        <div id="main-region" class="col-xs-8">
+          <p>Loading Album...</p>
+        </div>
+        <!-- Shopping Cart Region -->
+        <div class="col-xs-2">
+          <h3>Shopping Cart<span class="fa fa-shopping-cart" style="float: right;"></span></h3>
+          <div class="row" id="cart-region"></div>
+          <div class="row" id="total-region"></div>
+        </div>
       </div>
 
-      <div id="main-region" class="container">
-        <p>Loading Album...</p>
-      </div>
+      <!-- Dialog Region -->
       <div id="dialog-region"> </div>
       <div id="overlay">
         <div id="dialogTracks"></div>
       </div>
+
+      <!--##################################### -->
+      <!--####### ENDING OF APPLICATION #######-->
+      <!--##################################### -->
     </div>
 
+
+    <!--####### APP.INTRO TEMPLATES #######-->
     <script type="text/template" id="intro-album">
       <img src="<%-cover %>"/>
       <h3><strong><%-title%></strong></h3>
@@ -87,14 +110,13 @@
       </button>
     </script>
 
-
     <script type="text/template" id="intro-albums">
       <div class="container">
         <div class="row well"></div>
       </div>
     </script>
 
-
+    <!--####### APP.DIALOG TEMPLATES #######-->
     <script type="text/template" id="dialog-album">
       <div class="col-xs-3">
         <img src="<%-cover %>" />
@@ -110,11 +132,16 @@
     <script type="text/template" id="dialog-track">
       <div class="singleTrack">
         <li>
-          <span><%- title %></span><span style="float: right;"><%- length %></span>
+          <span><%- title %></span>
+          <div style="float: right;">
+            <span><%- length %></span>
+            <a class="addTrack" href="#">
+              <span class="fa fa-plus-circle"></span>
+            </a>
+          </div>
         </li>
       </div>
     </script>
-
 
     <script type="text/template" id="dialog-tracks">
       <div class="well col-xs-6 col-xs-offset-3 insideOverlay">
@@ -126,19 +153,20 @@
         <ol></ol>
       </div>
     </script>
+
+    <!--####### APP.CART TEMPLATES #######-->
     <script type="text/template" id="cart-item">
       <li>
-
         <img class="shoppinglist-cover" src="<%-cover%>" alt="" />
         <span class="shoppinglist-title"><%- title %></span>
         <div style="float: right;">
-
-        <span class="shoppinglist-price"><%- price %></span>
-        <button class="btn btn-sm btn-deleteitem"><span class="fa fa-times"></span></button>
+          <span class="shoppinglist-price"><%- price %></span>
+          <button class="btn btn-sm btn-deleteitem"><span class="fa fa-times"></span></button>
         </div>
       </li>
         <br>
     </script>
+
     <script type="text/template" id="cart-items">
       <div class="">
         <ol class="ol-cart"></ol>
@@ -146,11 +174,41 @@
       </div>
     </script>
 
+    <!--####### APP.CUSTOM TEMPLATES #######-->
+    <script type="text/template" id="custom-track">
+      <li>
+        <span class="shoppinglist-title"><%- title %></span>
+        <span> - </span>
+        <span class="shoppinglist-title"><%- artist %></span>
+        <div style="float: right;">
+          <span class="shoppinglist-price">£<%- price %></span>
+          <button class="btn btn-sm btn-deletetrack"><span class="fa fa-times"></span></button>
+        </div>
+      </li>
+        <br>
+    </script>
+
+    <script type="text/template" id="custom-album">
+      <div class="">
+        <button href="#" class="btn btn-primary buy-custom">
+          <span class="fa fa-cart-plus fa-2x cart-span"></span>
+        </button>
+        <ol class="ol-cart"></ol>
+        <br>
+      </div>
+    </script>
+
+    <!--####### APP.CART.TOTAL TEMPLATES #######-->
     <script type="text/template" id="cart-total">
       <div class="col-xs-12 shoppinglist-total">
         <h4 style="float: left;"><strong>Total:</strong></h4> <h4 style="float: right;"><%- ammount.toFixed(2) %></h4>
       </div>
     </script>
+
+
+    <!-- ################################### -->
+    <!-- ############## FILES ############## -->
+    <!-- ################################### -->
 
 
     <!-- Backbone.js Marionette.js PACK -->
@@ -167,39 +225,47 @@
     <script src="js/app.js"></script>
 
     <!--####### Sub-module INTRO #######-->
-    <!-- Intro.Controller -->
-    <script src="js/submodule_intro/controller.js"></script>
-    <!-- Intro.Entities -->
-    <script src="js/submodule_intro/entities/entities.js"></script>
-    <!-- Intro.Views -->
-    <script src="js/submodule_intro/views/views.js"></script>
+      <!-- Intro.Controller -->
+      <script src="js/submodule_intro/controller.js"></script>
+      <!-- Intro.Entities -->
+      <script src="js/submodule_intro/entities/entities.js"></script>
+      <!-- Intro.Views -->
+      <script src="js/submodule_intro/views/views.js"></script>
 
 
     <!--####### Sub-module DIALOG #######-->
-    <!-- Dialog App -->
-    <script src="js/submodule_dialog/app.js"></script>
-    <!-- Dialog.Controller -->
-    <script src="js/submodule_dialog/controller/controller.js"></script>
-    <!-- Dialog.Entities -->
-    <script src="js/submodule_dialog/entities/entities.js"></script>
-    <!-- Dialog.Views -->
-    <script src="js/submodule_dialog/views/views.js"></script>
+      <!-- Dialog App -->
+      <script src="js/submodule_dialog/app.js"></script>
+      <!-- Dialog.Controller -->
+      <script src="js/submodule_dialog/controller/controller.js"></script>
+      <!-- Dialog.Entities -->
+      <script src="js/submodule_dialog/entities/entities.js"></script>
+      <!-- Dialog.Views -->
+      <script src="js/submodule_dialog/views/views.js"></script>
 
     <!--####### Sub-module CART #######-->
-    <!-- Cart.Controller -->
-    <script src="js/submodule_cart/controller.js"></script>
-    <!-- Cart.Entities -->
-    <script src="js/submodule_cart/entities/entities.js"></script>
-    <!-- Cart.Views -->
-    <script src="js/submodule_cart/views/views.js"></script>
+      <!-- Cart.Controller -->
+      <script src="js/submodule_cart/controller.js"></script>
+      <!-- Cart.Entities -->
+      <script src="js/submodule_cart/entities/entities.js"></script>
+      <!-- Cart.Views -->
+      <script src="js/submodule_cart/views/views.js"></script>
 
     <!--####### Sub-module CART.TOTAL #######-->
-    <!-- Cart.Controller -->
-    <script src="js/submodule_cart/submodule_total/controller.js"></script>
-    <!-- Cart.Entities -->
-    <script src="js/submodule_cart/submodule_total/entities/entities.js"></script>
-    <!-- Cart.Views -->
-    <script src="js/submodule_cart/submodule_total/views/views.js"></script>
+      <!-- Cart.Controller -->
+      <script src="js/submodule_cart/submodule_total/controller.js"></script>
+      <!-- Cart.Entities -->
+      <script src="js/submodule_cart/submodule_total/entities/entities.js"></script>
+      <!-- Cart.Views -->
+      <script src="js/submodule_cart/submodule_total/views/views.js"></script>
+
+    <!--####### Sub-module CUSTOM #######-->
+      <!-- Custom.Controller -->
+      <script src="js/submodule_custom/controller.js"></script>
+      <!-- Custom.Entities -->
+      <script src="js/submodule_custom/entities/entities.js"></script>
+      <!-- Custom.Views -->
+      <script src="js/submodule_custom/views/views.js"></script>
 
     <script type="text/javascript">
       App.start()

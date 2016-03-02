@@ -181,11 +181,24 @@ ol {
   /*margin-left: 4px;*/
 }
 
+.btn-deletetrack {
+  border-radius: 100%;
+  padding: 1px 5px 1px 5px;
+  /*margin-left: 4px;*/
+}
+
 .shoppinglist-price {
   /*margin-left: 35px;*/
 }
 
 #cart-region {
+  border: 1px solid #d8d8d8;
+  overflow-x: scroll;
+  height: 200px;
+  border-radius: 1%;
+}
+
+#custom-region {
   border: 1px solid #d8d8d8;
   overflow-x: scroll;
   height: 200px;
@@ -213,4 +226,8 @@ ol {
 .cart-text-substitute {
   font-size: 14px;
   padding-right: 20px;
+}
+
+.buy-custom {
+  width: 304px;
 }
