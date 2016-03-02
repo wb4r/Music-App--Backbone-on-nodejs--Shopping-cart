@@ -9,12 +9,17 @@ App.module("Cart.Views", function(Views, App, Backbone, Marionette, $, _) {
     className: "",
 
     events: {
-      "click .btn-deleteitem"   :   "deleteItem"
+      "click .btn-deleteitem"   :   "deleteItem",
+      "click .cart-album-link"  :   "cartShowAlbum"
     },
 
     deleteItem: function(e) {
       e.preventDefault();
       this.trigger("item:delete", this.model);
+    },
+    cartShowAlbum: function(e) {
+      e.preventDefault();
+      this.trigger("album:show", this.model)
     }
   });
 

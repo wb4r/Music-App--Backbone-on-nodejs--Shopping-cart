@@ -34,8 +34,10 @@ App.module("Custom", function(Custom, App, Backbone, Marionette, $, _) {
             title: albumName,
             price: totalprice,
             cover: cover,
-            tracks: trackList
+            collection: customAlbum.models
           })
+          // new_model_album.collection = customAlbum;
+
           App.Cart.Controller.addToList(new_model_album)
           customAlbum.reset();
           $("#custom-name").val("");

@@ -73,6 +73,7 @@
           <input id="custom-name" class="input form-control" name="name" type="text" value="" size="30" placeholder="Album's Name"/>
           <br>
           <div class="row" id="list"></div> <!-- custom-region -->
+          <span style="float: right; font-size: 10px;">You can edit your list later</span>
         </div>
         <!-- Main Album Region -->
         <div id="main-region" class="col-xs-8">
@@ -158,7 +159,7 @@
     <script type="text/template" id="cart-item">
       <li>
         <img class="shoppinglist-cover" src="<%-cover%>" alt="" />
-        <span class="shoppinglist-title"><%- title %></span>
+        <span class="shoppinglist-title"><a class="cart-album-link" href="#"><%- title %></a></span>
         <div style="float: right;">
           <span class="shoppinglist-price"><%- price %></span>
           <button class="btn btn-sm btn-deleteitem"><span class="fa fa-times"></span></button>
