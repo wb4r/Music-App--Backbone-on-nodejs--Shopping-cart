@@ -205,6 +205,13 @@ ol {
   border-radius: 1%;
 }
 
+#list {
+  border: 1px solid #d8d8d8;
+  overflow-x: scroll;
+  height: 200px;
+  border-radius: 1%;
+}
+
 ol {
   padding: 10px;
 }

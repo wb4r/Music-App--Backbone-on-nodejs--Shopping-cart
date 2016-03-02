@@ -72,7 +72,7 @@
           <h3>Create Album<span class="fa fa-th-list" style="float: right;"></span></h3>
           <input id="custom-name" class="input form-control" name="name" type="text" value="" size="30" placeholder="Album's Name"/>
           <br>
-          <div class="row" id="custom-region"></div>
+          <div class="row" id="list"></div> <!-- custom-region -->
         </div>
         <!-- Main Album Region -->
         <div id="main-region" class="col-xs-8">
@@ -189,14 +189,19 @@
     </script>
 
     <script type="text/template" id="custom-album">
+      <div id="button"></div>
       <div class="">
-        <button href="#" class="btn btn-primary buy-custom">
-          <span class="fa fa-cart-plus fa-2x cart-span"></span>
-        </button>
         <ol class="ol-cart"></ol>
         <br>
       </div>
     </script>
+
+    <script type="text/template" id="custom-btn-buy">
+      <button href="#" class="btn btn-primary buy-custom">
+        <span class="fa fa-cart-plus fa-2x cart-span"></span>
+      </button>
+    </script>
+
 
     <!--####### APP.CART.TOTAL TEMPLATES #######-->
     <script type="text/template" id="cart-total">
@@ -260,8 +265,10 @@
       <script src="js/submodule_cart/submodule_total/views/views.js"></script>
 
     <!--####### Sub-module CUSTOM #######-->
+      <!-- Custom App -->
+      <script src="js/submodule_custom/app.js"></script>
       <!-- Custom.Controller -->
-      <script src="js/submodule_custom/controller.js"></script>
+      <script src="js/submodule_custom/controller/controller.js"></script>
       <!-- Custom.Entities -->
       <script src="js/submodule_custom/entities/entities.js"></script>
       <!-- Custom.Views -->

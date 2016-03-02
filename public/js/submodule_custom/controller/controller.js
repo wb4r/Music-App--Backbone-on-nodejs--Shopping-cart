@@ -6,10 +6,8 @@ App.module("Custom", function(Custom, App, Backbone, Marionette, $, _) {
 
   Custom.Controller = {
     init: function() {
-      // Load Album
+      var customBuyBtn = new App.Custom.Views.BuyBtn();
       customAlbum = new App.Custom.Entities.Album();
-
-      // Album View
       customAlbumView = new App.Custom.Views.Album({
         collection: customAlbum
       })
@@ -18,10 +16,14 @@ App.module("Custom", function(Custom, App, Backbone, Marionette, $, _) {
         customAlbum.remove(model)
       })
 
-      // customAlbumView.on("childview:custom:buy", function(childView, collection) {
-      //   console.log("collection");
-      // })
+      customBuyBtn.on("buy", function(childView, collection) {
+        console.log("collection");
+      })
+
+      App.Custom.regions.list.show(customAlbumView)
+      App.Custom.regions.button.show(customBuyBtn)
     },
+
     addToList: function(model) {
       var new_track = new App.Custom.Entities.Track(),
           price;
@@ -31,8 +33,9 @@ App.module("Custom", function(Custom, App, Backbone, Marionette, $, _) {
       new_track.set({"price": this.getPrice()})
 
       customAlbum.add(new_track)
-      App.regions.custom.show(customAlbumView)
+      App.Custom.regions.list.show(customAlbumView)
     },
+
     getPrice: function() {
       var prices = [1.1, 1.25, 0.75, 0.6, 0.99, 1.99, 1.25, 0.75, 0.6, 0.99]
 
