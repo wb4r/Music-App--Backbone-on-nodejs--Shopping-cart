@@ -58,7 +58,7 @@ App.module("Custom", function(Custom, App, Backbone, Marionette, $, _) {
 
       new_track.set({"title": model.attributes.title})
       new_track.set({"artist": model.attributes.artist})
-      new_track.set({"price": 1.25})
+      new_track.set({"price": 0.79})
       // new_track.set({"price": this.getPrice()})
 
       this.addForButton(new_track.attributes.price)

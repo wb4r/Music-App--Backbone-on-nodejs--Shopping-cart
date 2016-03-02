@@ -238,3 +238,14 @@ ol {
 .buy-custom {
   width: 304px;
 }
+
+footer {
+  background-color: #2E2E2E;
+  height: 150px;
+  margin-top: 60px;
+}
+
+.logo {
+  width: 300px;
+  margin-top: 45px;
+}
