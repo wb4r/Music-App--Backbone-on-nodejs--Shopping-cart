@@ -16,6 +16,11 @@ App.module("Cart", function(Cart, App, Backbone, Marionette, $, _) {
       cartProductsView = new App.Cart.Views.Products({
         collection: cartProducts
       })
+
+      cartProductsView.on("childview:item:delete", function(childView, model) {
+        cartProducts.remove(model)
+        App.Cart.Total.Controller.reduce(model)
+      })
     },
     addToList: function(model) {
       new_product = new App.Cart.Entities.Product();
@@ -26,6 +31,7 @@ App.module("Cart", function(Cart, App, Backbone, Marionette, $, _) {
 
       cartProducts.add(new_product)
       App.regions.cart.show(cartProductsView)
-    },
+    }
+
   }
 })

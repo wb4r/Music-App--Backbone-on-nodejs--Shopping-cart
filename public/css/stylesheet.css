@@ -83,6 +83,8 @@ h4, h5, button, p, h4 strong, ol li, .shoppinglist-title {
 
 .insideOverlay {
   margin-top: 100px;
+  overflow-x: scroll;
+  height: 500px;
 }
 
 .singleTrack {
@@ -186,7 +188,7 @@ ol {
 #cart-region {
   border: 1px solid #d8d8d8;
   overflow-x: scroll;
-  height:200px;
+  height: 200px;
   border-radius: 1%;
 }
 
@@ -201,4 +203,14 @@ ol {
 
 .shoppinglist-total {
   margin-top: 15px
+}
+
+.cart-btn {
+  width: 66.719px!important;
+  height: 25px!important
+}
+
+.cart-text-substitute {
+  font-size: 14px;
+  padding-right: 20px;
 }
